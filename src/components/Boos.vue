@@ -38,8 +38,8 @@ export default {
 //  this.index = this.mast.length *10
    },
     created() {
-    this.mast =  JSON.parse( localStorage.getItem("mast"))   
-  this.index = this.mast.length *10
+//     this.mast =  JSON.parse( localStorage.getItem("mast"))   
+//   this.index = this.mast.length *10
     console.log(this.index);
     //    console.log(this.mast.length,"8888888888888888888");
     
