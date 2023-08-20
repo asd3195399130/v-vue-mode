@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Hellow from "@/components/Hellow.vue";
 
 Vue.use(VueRouter);
 
@@ -11,17 +10,11 @@ const routes = [
     redirect: { name: "home" },
   },
   {
-    path: "/home",
+    path: "/",
     name: "home",
     component: HomeView,
-    children: [
-      {
-        path: "/Hellow",
-        name: "Hellow",
-        component: Hellow,
-      },
-    ],
   },
+
   {
     path: "/about",
     name: "about",
@@ -30,6 +23,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/HelloWorld",
+    name: "HelloWorld",
+    component: () => import("@/components/HelloWorld"),
   },
 ];
 

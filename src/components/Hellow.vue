@@ -1,35 +1,53 @@
 <!--  -->
 <template>
-<div class="">
-   <h1>开始了</h1>
-    <ul>
-        <li>16666</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>6</li>
-    </ul>
- 
+<div class="less-left">
+    <Create></Create>
+    <Addurl></Addurl>
+    <Hoin/>
+          <el-progress :percentage="50" status="warning" color="red"></el-progress>
 </div>
 </template>
 
 <script>
+import Create from './Create.vue';
+import Addurl from "./Addurl.vue"
+import Hoin   from "./Hoin.vue"
 export default {
     name:"Hellow",
     data() {
         return {
-
+           msg:"123"
         }
+    },
+    components:{
+      Create,
+      Addurl,
+      Hoin
     },
     created() {
 
     },
     mounted() {
-   console.log(123);
+
     }
 }
 </script>
+
 <style lang="less" scoped>
 /* @import url(); 引入css类 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.less-left{
+    
+width:200px;
+height:100%;
+background:rgb(27, 26, 26);
+border-top-left-radius: 15px;
+border-bottom-left-radius: 15px;
+padding:15px
 
+}
 </style>

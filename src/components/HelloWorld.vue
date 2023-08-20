@@ -1,58 +1,99 @@
+<!--  -->
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+  <div class="mast">
+    <div class="host-page" :id="flag ? 'da': 'xiao'">
+      <button @click="back" class="err">
+        <span class="el-icon-error"></span>
+      </button>
+      <button @click="flag=!flag" class="scre">
+        <span class="el-icon-rank"></span>
+      </button>    
+       <Hellow></Hellow>
+       <BoosVue/>
+             
+    </div>
+
   </div>
 </template>
 
 <script>
+import Hellow from "./Hellow.vue";
+import BoosVue from "./Boos.vue";
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
+  name: "name",
+  data() {
+    return {
+      flag: false,
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
+    };
+  },
+  components: {
+    Hellow,
+    BoosVue
+  },
+  methods: {
+    back() {
+      this.$router.back();
+    },
+  },
+  created() {
+    
+  },
+  mounted() {},
+};
+</script>
+<style lang="less" scoped>
+/* @import url(); 引入css类 */
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.host-page {
+  position: relative;
 }
-a {
-  color: #42b983;
+#xiao {
+  width: 1000px;
+  height: 600px;
+}
+#da {
+  width: 100vw !important;
+  height: 100vh !important;
+}
+.host-page {
+  width: 1000px;
+  height: 600px;
+  background: #000;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 20px 20px 60px #383737, -20px -20px 60px #302f2e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.err {
+  position: absolute;
+  right: 0px;
+}
+.scre{
+  position: absolute;
+  right: 26px;
+}
+button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin: 6px 6px 0px 0px;
+}
+ Hellow{
+   float: left;
+}
+Boos{
+   float: right;
 }
 </style>
